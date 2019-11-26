@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Trello | Boards</title>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="./css/materialize.min.css"  media="screen,boardion"/>
+      <link rel="icon" type="image/png" href="./img/trello-logo.png" sizes="32x32"/>
+      <link rel="icon" type="image/png" href="./img/trello-logo.png" sizes="16x16"/>
+      <link type="text/css" rel="stylesheet" href="./css/boards.css">
+
+  
+
+    </head>
+
+    <body>
+
+      <header>
+          <div class="header-wrapper">
+              <a href="#" class="brand-logo"> Trello</a>
+              <ul>
+                  <li><a href="./index.html">Logout</a></li>
+              </ul>
+          </div>
+      </header>
+
+      <div class="title">My Boards</div>
+      <div id="board"></div>
+
+      <a class="btn-floating btn-large waves-effect waves-light cyan accent-4 add-board-btn">
+        <i class="material-icons">add</i>
+      </a>
+
+
+        <!--------------------  Modal HTML-------------------------------->
+          <div id="modal" class="modal">
+            <div class="close-moadl"></div>
+            <form class="add-board-form" action="/boards" method="POST">
+                 <h5>Write a Board name</h5>
+                 <div class="input-field col s12">
+                    <input class="board-name" type="text" placeholder="Board name" name="board_name">
+                  </div>
+                  <p class="warning">Please Write Boards name!</p>
+                  <div class="btn-area">
+                    <!-- <div class="save waves-effect waves-light btn cyan accent-4 lighten-5">save</div> -->
+                    <input  type="submit"  value="Save"  />
+                  </div>
+            </form>
+          </div>
+       <!----------------------------------------------------------------->
+
+      <script type="text/javascript" src="./js/jquery-2.2.0.min.js"></script>
+      <script type="text/javascript" src="./js/materialize.min.js"></script>
+      <script type="text/javascript" src="./js/template.js"></script>
+      <script type="text/javascript" src="./js/boards.js"></script>
+
+      
+
+
+ <!----- Script for Data render--->
+      <script>
+
+        function getboard(){
+            fetch('http://localhost:5000/boards/list')
+            .then(response => response.json())
+            .then(function(results){
+            const result = results.results;
+            let dynamicBoard = '<ul class="board-list">'
+              for( var i = 0; i < result.length; i++){
+                dynamicBoard += `<li id="board" class="board waves-effect waves-light btn z-depth-1" > <a href="./board.html">${result[i].board_name}</a></li>`
+              
+              }
+              dynamicBoard+= '</ul>'
+             document.getElementById('board').innerHTML = dynamicBoard
+            })
+          }
+        
+              getboard();
+              </script>
+    
+    </body>
+  </html>

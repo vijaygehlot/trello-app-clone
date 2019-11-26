@@ -1,0 +1,53 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Trello | Sign Up</title>
+      <link rel="icon" type="image/png" href="./img/trello-logo.png" sizes="32x32"/>
+      <link rel="icon" type="image/png" href="./img/trello-logo.png" sizes="16x16"/>
+      <link type="text/css" rel="stylesheet" href="./css/materialize.min.css"  media="screen,projection"/>
+      <link  href="./css/signup.css">
+    </head>
+
+    <body>
+
+      <header style="background-color: #007AC0;text-align: center;font-size: 1.6rem;font-family: cursive;height: 50px;">
+          <div class="header-wrapper" >
+              <a href="#" class="brand-logo" style="color:white;">Trello</a>
+          </div>
+      </header>
+
+      <div class="signup-box z-depth-2" style="width: 50%; margin-left: 25%;margin-top: 10%;">
+
+          <h4 class="account-header" style="text-align: center;padding-top:1%">Create a Account</h4>
+
+          <form class="signup-form" id="signupuser" action="/signup" method="POST">
+            <div class="row">
+                <div class="input-field col s12">
+                  <input id="user_name" type="text" class="validate" name="user_name">
+                  <label for="user_name">Username</label>
+                </div>
+            </div>
+
+            <div class="row">  <title>Trello | Sign Up</title>
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" name="email">
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+
+           <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate" name="password">
+                  <label for="password">Password</label>
+                </div>
+           </div>
+              <input  style="margin-left: 40%;margin-bottom:3%;padding-top: 1%;" class="signup-btn waves-effect waves-light btn" type="submit" value="signUp" />
+          </form>
+
+      </div>
+
+      <script type="text/javascript" src="./js/jquery-2.2.0.min.js"></script>
+      <!-- <script type="text/javascript" src="auth-model.js"></script> -->
+      <script type="text/javascript" src="./js/materialize.min.js"></script>
+    </body>
+  </html>
