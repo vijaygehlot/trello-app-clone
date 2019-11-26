@@ -114,7 +114,7 @@ The application should now run on <code>localhost:5000</code>
   * http://localhost:5000/boards
        * Method : POST
        * user can create/add Boards 
-        Links: https://drive.google.com/file/d/1CInwrTVvdcPLCXvmuaFO1V_SMUDwVxNq/view?usp=drivesdk
+       
         
   * http://localhost:5000/lists 
        * Method : POST
